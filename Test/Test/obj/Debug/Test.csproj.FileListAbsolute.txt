@@ -1,0 +1,45 @@
+C:\Test\Test\bin\Test.dll.config
+C:\Test\Test\bin\Test.dll
+C:\Test\Test\bin\Test.pdb
+C:\Test\Test\bin\EntityFramework.dll
+C:\Test\Test\bin\EntityFramework.SqlServer.dll
+C:\Test\Test\bin\Microsoft.Web.Infrastructure.dll
+C:\Test\Test\bin\System.Web.Helpers.dll
+C:\Test\Test\bin\System.Web.Mvc.dll
+C:\Test\Test\bin\System.Web.Razor.dll
+C:\Test\Test\bin\System.Web.WebPages.Deployment.dll
+C:\Test\Test\bin\System.Web.WebPages.dll
+C:\Test\Test\bin\System.Web.WebPages.Razor.dll
+C:\Test\Test\bin\System.Web.Razor.xml
+C:\Test\Test\bin\System.Web.Helpers.xml
+C:\Test\Test\bin\System.Web.WebPages.Deployment.xml
+C:\Test\Test\bin\System.Web.WebPages.xml
+C:\Test\Test\bin\System.Web.WebPages.Razor.xml
+C:\Test\Test\bin\System.Web.Mvc.xml
+C:\Test\Test\bin\EntityFramework.xml
+C:\Test\Test\bin\EntityFramework.SqlServer.xml
+C:\Test\Test\obj\Debug\Test.dll
+C:\Test\Test\obj\Debug\Test.pdb
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\Test.dll.config
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\Test.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\Test.pdb
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\EntityFramework.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\EntityFramework.SqlServer.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\Microsoft.Web.Infrastructure.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.Helpers.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.Mvc.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.Razor.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.WebPages.Deployment.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.WebPages.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.WebPages.Razor.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\EntityFramework.xml
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\EntityFramework.SqlServer.xml
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.Razor.xml
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.Helpers.xml
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.WebPages.Deployment.xml
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.WebPages.xml
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.WebPages.Razor.xml
+\\vmware-host\Shared Folders\Desktop\Test\Test\bin\System.Web.Mvc.xml
+\\vmware-host\Shared Folders\Desktop\Test\Test\obj\Debug\Test.dll
+\\vmware-host\Shared Folders\Desktop\Test\Test\obj\Debug\Test.pdb
+\\vmware-host\Shared Folders\Desktop\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

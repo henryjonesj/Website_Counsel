@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CounsellingModelStoreContainer" CdmEntityContainer="CounsellingEntities">
+    <EntitySetMapping Name="appointments">
+      <EntityTypeMapping TypeName="CounsellingModel.appointment">
+        <MappingFragment StoreEntitySet="appointment">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="CounselorID" ColumnName="CounselorID" />
+          <ScalarProperty Name="Confirmed" ColumnName="Confirmed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="counselors">
+      <EntityTypeMapping TypeName="CounsellingModel.counselor">
+        <MappingFragment StoreEntitySet="counselor">
+          <ScalarProperty Name="CounselorID" ColumnName="CounselorID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loginauthentications">
+      <EntityTypeMapping TypeName="CounsellingModel.loginauthentication">
+        <MappingFragment StoreEntitySet="loginauthentication">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scheduledappointments">
+      <EntityTypeMapping TypeName="CounsellingModel.scheduledappointment">
+        <MappingFragment StoreEntitySet="scheduledappointment">
+          <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+          <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+          <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Students">
+      <EntityTypeMapping TypeName="CounsellingModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="PUID" ColumnName="PUID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

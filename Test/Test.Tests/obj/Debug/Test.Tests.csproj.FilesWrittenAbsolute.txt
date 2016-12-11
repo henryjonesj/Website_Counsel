@@ -1,0 +1,15 @@
+/Users/henryjones/Projects/Test/Test.Tests/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/Test.Tests.dll.mdb
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/Test.Tests.dll
+/Users/henryjones/Projects/Test/Test.Tests/obj/Debug/Test.Tests.dll
+/Users/henryjones/Projects/Test/Test.Tests/obj/Debug/Test.Tests.dll.mdb
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/System.Web.Razor.dll
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/Microsoft.Web.Infrastructure.dll
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/System.Web.Helpers.dll
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/System.Web.WebPages.Deployment.dll
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/System.Web.WebPages.dll
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/System.Web.WebPages.Razor.dll
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/System.Web.Mvc.dll
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/nunit.framework.dll
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/Test.dll
+/Users/henryjones/Projects/Test/Test.Tests/bin/Debug/Test.dll.mdb

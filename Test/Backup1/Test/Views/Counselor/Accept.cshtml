@@ -1,0 +1,45 @@
+﻿@model MVCEntityLogin.Models.AppointmentListModel
+@{
+    ViewBag.Title = "Accept Appointment";
+}
+@using (Html.BeginForm("Accept", "Counselor", FormMethod.Post))
+{
+    <link rel="stylesheet" href="~/Content/table.css">
+    <div>
+        <table class="rwd-table">
+            <tr>
+                <td align="right">
+                    Student ID :
+                </td>
+                <td align="left">
+                    @Html.DisplayFor(m => m.AppointmentListDetail.StudentID)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    Student Name :
+                </td>
+                <td align="left">
+                    @Html.DisplayFor(m => m.AppointmentListDetail.StudentName)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    DateTime :
+                </td>
+                <td align="left">
+                    @Html.DisplayFor(m => m.AppointmentListDetail.DateTime)
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <a href="/Counselor/Counselor/">Back</a>
+
+                    <div style="color: Red">@ViewBag.Message</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+}

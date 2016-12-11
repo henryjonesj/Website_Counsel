@@ -1,0 +1,55 @@
+﻿@model MVCEntityLogin.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+<h2>Login Form</h2>
+
+<link rel="stylesheet" href="~/Content/style.css">
+
+@using (Html.BeginForm())
+{
+
+   @Html.ValidationSummary(true)
+
+  <title>Random Login Form</title>
+  
+  
+  <link rel="stylesheet" href="~/Content/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+  <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Online<span>Counselling</span></div>
+		</div>
+		<br>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+ 
+ 
+ <div class="login">
+				Date: <input type="text" id="datepicker"> <br>
+				 <select name="time" title="Time">
+    				<option value="09:00">09:00</option>
+    				<option value="09:30">09:30</option>
+    				<option value="10:00">10:00</option>
+    				<option value="11:00">10:30</option>
+  				</select>
+				<br><br><br>
+				<input type="checkbox"> Click to Add text
+				<input type="submit" value="Submit">
+		</div>
+       
+   
+}
+
+

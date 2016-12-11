@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{3A00C891-8FB4-42A3-9DD1-E538A719512E}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Test/Views/Home/Counselor.aspx">
+    <Files>
+      <File FileName="Test/Controllers/HomeController.cs" Line="49" Column="5" />
+      <File FileName="Test/Models/LoginModel.cs" Line="20" Column="31" />
+      <File FileName="Test/Content/style.css" Line="112" Column="5" />
+      <File FileName="Test/Views/Home/WelcomePage.html" Line="6" Column="5" />
+      <File FileName="Test.Tests/Controllers/HomeControllerTest.cs" Line="24" Column="25" />
+      <File FileName="Test/Views/Home/Student.cshtml" Line="40" Column="51" />
+      <File FileName="Test/App_Start/RouteConfig.cs" Line="9" Column="4" />
+      <File FileName="Test/Views/Home/Login.aspx" Line="26" Column="40" />
+      <File FileName="Test/Views/Home/Counselor.aspx" Line="39" Column="49" />
+      <File FileName="Test/Views/Home/Student.aspx" Line="26" Column="14" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/henryjones/Projects/Test/Test/Controllers/HomeController.cs" relfile="Test/Controllers/HomeController.cs" line="6" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>Test.Tests/Test.Tests.csproj</String>
+  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.Test PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

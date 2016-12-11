@@ -1,0 +1,50 @@
+﻿@model MVCEntityLogin.Models.AppointmentListModel
+@{
+    ViewBag.Title = "Insert, Update, Delete Operation In Asp.Net MVC Using Entity Framework C#.Net ,CRUD Functionality";
+}
+<style>
+    .container {
+        width: 100%;
+        text-align: center;
+    }
+
+    .left {
+        float: left;
+        width: 150px;
+    }
+
+</style>
+@using (Html.BeginForm("Create", "Counselor", FormMethod.Post))
+{
+    <div>
+        <table width="20" cellpadding="5" cellspacing="5" border="1" style="border: 1 solid black;
+            border-collapse: collapse;">
+            <tr>
+                <td align="right">
+                    Name :
+                </td>
+                <td align="left">
+                    @Html.TextBoxFor(m => m.AppointmentListDetail.StudentName)
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                DateTime :
+            </td>
+            <td align="left">
+                @Html.TextBoxFor(m => m.AppointmentListDetail.DateTime)
+        </td>
+    </tr>
+  
+<tr>
+    <td colspan="2" align="center">
+        <input type="submit" value="Save" />
+        <a href="/Counselor/Counselor/">Back</a>
+
+        <div style="color: Red">@ViewBag.Message</div>
+    </td>
+</tr>
+</table>
+</div>
+
+}

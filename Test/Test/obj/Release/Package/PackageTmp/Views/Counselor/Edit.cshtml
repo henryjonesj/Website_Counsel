@@ -1,0 +1,46 @@
+﻿@model MVCEntityLogin.Models.AppointmentListModel
+@{
+    ViewBag.Title = "Validate Appointment";
+}
+@using (Html.BeginForm("Edit", "Counselor", FormMethod.Post))
+{
+    <script>
+        window.onload = function () {
+            @if (Session["UserName"] == null) {
+                Response.Redirect("~/Home/Login");
+            }
+    }
+    </script>
+
+    <link rel="stylesheet" href="~/Content/table.css">
+    <div>
+
+        <br /><br/><br/><br /><br /><br />
+        <table class="rwd-table" align="center">
+            <tr>
+                <td align="right">
+                    Name :
+                </td>
+                <td align="left">
+                    @Html.TextBoxFor(m => m.AppointmentListDetail.StudentName)
+                    @Html.Hidden("Id", Model.AppointmentListDetail.StudentID)
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    DateTime :
+                </td>
+                <td align="left">
+                    @Html.TextBoxFor(m => m.AppointmentListDetail.DateTime)
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Update" />
+                    <div style="color: orange">@ViewBag.Message</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+}

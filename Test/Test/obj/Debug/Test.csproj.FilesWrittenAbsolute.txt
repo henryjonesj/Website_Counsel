@@ -1,0 +1,14 @@
+/Users/henryjones/Projects/Test/Test/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/henryjones/Projects/Test/Test/bin/Test.dll.mdb
+/Users/henryjones/Projects/Test/Test/bin/Test.dll
+/Users/henryjones/Projects/Test/Test/obj/Debug/Test.dll
+/Users/henryjones/Projects/Test/Test/obj/Debug/Test.dll.mdb
+/Users/henryjones/Projects/Test/Test/bin/System.Web.Razor.dll
+/Users/henryjones/Projects/Test/Test/bin/Microsoft.Web.Infrastructure.dll
+/Users/henryjones/Projects/Test/Test/bin/System.Web.Helpers.dll
+/Users/henryjones/Projects/Test/Test/bin/System.Web.WebPages.Deployment.dll
+/Users/henryjones/Projects/Test/Test/bin/System.Web.WebPages.dll
+/Users/henryjones/Projects/Test/Test/bin/System.Web.WebPages.Razor.dll
+/Users/henryjones/Projects/Test/Test/bin/System.Web.Mvc.dll
+/Users/henryjones/Projects/Test/Test/bin/EntityFramework.dll
+/Users/henryjones/Projects/Test/Test/bin/EntityFramework.SqlServer.dll

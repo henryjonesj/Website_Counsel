@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CounsellingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="appointment">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="CounselorID" Type="int" Nullable="false" />
+          <Property Name="Confirmed" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="counselor">
+          <Key>
+            <PropertyRef Name="CounselorID" />
+          </Key>
+          <Property Name="CounselorID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="loginauthentication">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="scheduledappointment">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="PUID" />
+          </Key>
+          <Property Name="PUID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_appointment_counselor">
+          <End Role="counselor" Type="Self.counselor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="counselor">
+              <PropertyRef Name="CounselorID" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="CounselorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_appointment_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="appointment" Type="Self.appointment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="PUID" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_scheduledappointment_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="scheduledappointment" Type="Self.scheduledappointment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="PUID" />
+            </Principal>
+            <Dependent Role="scheduledappointment">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CounsellingModelStoreContainer">
+          <EntitySet Name="appointment" EntityType="Self.appointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="counselor" EntityType="Self.counselor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loginauthentication" EntityType="Self.loginauthentication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="scheduledappointment" EntityType="Self.scheduledappointment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_appointment_counselor" Association="Self.FK_appointment_counselor">
+            <End Role="counselor" EntitySet="counselor" />
+            <End Role="appointment" EntitySet="appointment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_appointment_Student" Association="Self.FK_appointment_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="appointment" EntitySet="appointment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_scheduledappointment_Student" Association="Self.FK_scheduledappointment_Student">
+            <End Role="Student" EntitySet="Student" />
+            <End Role="scheduledappointment" EntitySet="scheduledappointment" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CounsellingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="appointment">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="CounselorID" Type="Int32" Nullable="false" />
+          <Property Name="Confirmed" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="counselor" Relationship="Self.FK_appointment_counselor" FromRole="appointment" ToRole="counselor" />
+          <NavigationProperty Name="Student" Relationship="Self.FK_appointment_Student" FromRole="appointment" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="counselor">
+          <Key>
+            <PropertyRef Name="CounselorID" />
+          </Key>
+          <Property Name="CounselorID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="appointments" Relationship="Self.FK_appointment_counselor" FromRole="counselor" ToRole="appointment" />
+        </EntityType>
+        <EntityType Name="loginauthentication">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="scheduledappointment">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="StudentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Student" Relationship="Self.FK_scheduledappointment_Student" FromRole="scheduledappointment" ToRole="Student" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="PUID" />
+          </Key>
+          <Property Name="PUID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="appointment" Relationship="Self.FK_appointment_Student" FromRole="Student" ToRole="appointment" />
+          <NavigationProperty Name="scheduledappointment" Relationship="Self.FK_scheduledappointment_Student" FromRole="Student" ToRole="scheduledappointment" />
+        </EntityType>
+        <Association Name="FK_appointment_counselor">
+          <End Role="counselor" Type="Self.counselor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="counselor">
+              <PropertyRef Name="CounselorID" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="CounselorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_appointment_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="appointment" Type="Self.appointment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="PUID" />
+            </Principal>
+            <Dependent Role="appointment">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_scheduledappointment_Student">
+          <End Role="Student" Type="Self.Student" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="scheduledappointment" Type="Self.scheduledappointment" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="PUID" />
+            </Principal>
+            <Dependent Role="scheduledappointment">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CounsellingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="appointments" EntityType="Self.appointment" />
+          <EntitySet Name="counselors" EntityType="Self.counselor" />
+          <EntitySet Name="loginauthentications" EntityType="Self.loginauthentication" />
+          <EntitySet Name="scheduledappointments" EntityType="Self.scheduledappointment" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <AssociationSet Name="FK_appointment_counselor" Association="Self.FK_appointment_counselor">
+            <End Role="counselor" EntitySet="counselors" />
+            <End Role="appointment" EntitySet="appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_appointment_Student" Association="Self.FK_appointment_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="appointment" EntitySet="appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_scheduledappointment_Student" Association="Self.FK_scheduledappointment_Student">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="scheduledappointment" EntitySet="scheduledappointments" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CounsellingModelStoreContainer" CdmEntityContainer="CounsellingEntities">
+          <EntitySetMapping Name="appointments">
+            <EntityTypeMapping TypeName="CounsellingModel.appointment">
+              <MappingFragment StoreEntitySet="appointment">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="CounselorID" ColumnName="CounselorID" />
+                <ScalarProperty Name="Confirmed" ColumnName="Confirmed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="counselors">
+            <EntityTypeMapping TypeName="CounsellingModel.counselor">
+              <MappingFragment StoreEntitySet="counselor">
+                <ScalarProperty Name="CounselorID" ColumnName="CounselorID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loginauthentications">
+            <EntityTypeMapping TypeName="CounsellingModel.loginauthentication">
+              <MappingFragment StoreEntitySet="loginauthentication">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="scheduledappointments">
+            <EntityTypeMapping TypeName="CounsellingModel.scheduledappointment">
+              <MappingFragment StoreEntitySet="scheduledappointment">
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="CounsellingModel.Student">
+              <MappingFragment StoreEntitySet="Student">
+                <ScalarProperty Name="PUID" ColumnName="PUID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

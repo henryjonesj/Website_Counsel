@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CounsellingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="appointment">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="CounselorID" Type="int" Nullable="false" />
+    <Property Name="Confirmed" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="counselor">
+    <Key>
+      <PropertyRef Name="CounselorID" />
+    </Key>
+    <Property Name="CounselorID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="loginauthentication">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="scheduledappointment">
+    <Key>
+      <PropertyRef Name="StudentID" />
+    </Key>
+    <Property Name="StudentID" Type="int" Nullable="false" />
+    <Property Name="StudentName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Student">
+    <Key>
+      <PropertyRef Name="PUID" />
+    </Key>
+    <Property Name="PUID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_appointment_counselor">
+    <End Role="counselor" Type="Self.counselor" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="appointment" Type="Self.appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="counselor">
+        <PropertyRef Name="CounselorID" />
+      </Principal>
+      <Dependent Role="appointment">
+        <PropertyRef Name="CounselorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_appointment_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="appointment" Type="Self.appointment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="PUID" />
+      </Principal>
+      <Dependent Role="appointment">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_scheduledappointment_Student">
+    <End Role="Student" Type="Self.Student" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="scheduledappointment" Type="Self.scheduledappointment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Student">
+        <PropertyRef Name="PUID" />
+      </Principal>
+      <Dependent Role="scheduledappointment">
+        <PropertyRef Name="StudentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CounsellingModelStoreContainer">
+    <EntitySet Name="appointment" EntityType="Self.appointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="counselor" EntityType="Self.counselor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="loginauthentication" EntityType="Self.loginauthentication" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="scheduledappointment" EntityType="Self.scheduledappointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Student" EntityType="Self.Student" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_appointment_counselor" Association="Self.FK_appointment_counselor">
+      <End Role="counselor" EntitySet="counselor" />
+      <End Role="appointment" EntitySet="appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_appointment_Student" Association="Self.FK_appointment_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="appointment" EntitySet="appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_scheduledappointment_Student" Association="Self.FK_scheduledappointment_Student">
+      <End Role="Student" EntitySet="Student" />
+      <End Role="scheduledappointment" EntitySet="scheduledappointment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
